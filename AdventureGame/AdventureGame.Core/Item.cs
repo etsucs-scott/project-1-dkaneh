@@ -8,5 +8,8 @@ namespace AdventureGame.Core
 {
     internal abstract class Item
     {
+        public int X { get; set; }
+        public int Y { get; set; }
+
     }
 }

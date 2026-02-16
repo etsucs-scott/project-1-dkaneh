@@ -11,13 +11,17 @@ namespace AdventureGame.Core
     {
         public int X { get; set; }
         public int Y { get; set; }
-        private string PlayerIcon;
-        
+        public string PlayerIcon;
+        public int Health { get; set; }
+        public int Damage { get; set; }
         public Player(int initialX, int initialY)
         {
             X = initialX;
             Y = initialY;
             PlayerIcon = "@";
+            Health = 100;
+            Damage = 10;
+
         }
 
         public void Draw()

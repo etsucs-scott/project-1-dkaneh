@@ -18,6 +18,19 @@ namespace AdventureGame.Core
             Rows = grid.GetLength(0);
             Cols = grid.GetLength(1);
         }
+        
+        public void InitializeMaze()
+        {
+            for (int y = 0; y < Rows; y++)
+            {
+                for (int x = 0; x < Cols; x++)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Grid[y, x] = "#";
+                    Console.ResetColor();
+                }
+            }
+        }
 
         public void Draw()
         {
@@ -27,7 +40,9 @@ namespace AdventureGame.Core
                 {
                     string element = Grid[y, x];
                     Console.SetCursorPosition(x, y);
+                    if (element == "#") { Console.ForegroundColor = ConsoleColor.DarkYellow; }
                     Console.Write(element);
+                    Console.ResetColor();
                 }
             }
         }

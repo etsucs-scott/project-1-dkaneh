@@ -8,9 +8,9 @@ namespace AdventureGame.Core
 {
     internal interface ICharacter
     {
-        /*
+        int X { get; set; }
+        int Y { get; set; }
         int Health { get; set; }
         int Damage { get; set; }
-        */
     }
 }
