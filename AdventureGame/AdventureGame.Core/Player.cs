@@ -14,20 +14,29 @@ namespace AdventureGame.Core
         public string PlayerIcon;
         public int Health { get; set; }
         public int Damage { get; set; }
-        public Player(int initialX, int initialY)
+        Random random = new Random();
+
+        /// <summary>
+        /// Handles the palyer's positio in the maze, health, and damage
+        /// </summary>
+        public Player()
         {
-            X = initialX;
-            Y = initialY;
+            X = 1;
+            Y = random.Next(1,12);
             PlayerIcon = "@";
             Health = 100;
             Damage = 10;
 
         }
-
+        /// <summary>
+        /// Prints the player to the screen
+        /// </summary>
         public void Draw()
         {
             Console.SetCursorPosition(X, Y);
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write(PlayerIcon);
+            Console.ResetColor();
         }
     }
 }

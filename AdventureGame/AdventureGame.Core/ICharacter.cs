@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AdventureGame.Core
 {
+    /// <summary>
+    /// Basic interface for monsters and the player
+    /// </summary>
     internal interface ICharacter
     {
         int X { get; set; }

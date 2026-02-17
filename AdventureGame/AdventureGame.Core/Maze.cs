@@ -6,32 +6,27 @@ using System.Threading.Tasks;
 
 namespace AdventureGame.Core
 {
+    /// <summary>
+    /// Maintains information about the maze and recalls where specific items/obstacles are within it
+    /// </summary>
     internal class Maze
     {
-        private string[,] Grid;
-        private int Rows;
-        private int Cols;
-
+        public string[,] Grid;
+        public int Rows;
+        public int Cols;
+        /// <summary>
+        /// The maze the player traverses
+        /// </summary>
+        /// <param name="grid">The maze</param>
         public Maze(string[,] grid)
         {
             Grid = grid;
             Rows = grid.GetLength(0);
             Cols = grid.GetLength(1);
         }
-        
-        public void InitializeMaze()
-        {
-            for (int y = 0; y < Rows; y++)
-            {
-                for (int x = 0; x < Cols; x++)
-                {
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    Grid[y, x] = "#";
-                    Console.ResetColor();
-                }
-            }
-        }
-
+        /// <summary>
+        /// Prints the maze
+        /// </summary>
         public void Draw()
         {
             for (int y = 0; y < Rows; y++)
@@ -46,12 +41,23 @@ namespace AdventureGame.Core
                 }
             }
         }
-
+        /// <summary>
+        /// Retrieves what is on the tile of a given coordinate in the maze
+        /// </summary>
+        /// <param name="x">Y-coordinate</param>
+        /// <param name="y">Y-coordinate</param>
+        /// <returns>String with element on the tile specified</returns>
         public string GetElementAt(int x, int y)
         {
             return Grid[y, x];
         }
 
+        /// <summary>
+        /// Returns whether a given coordinate is able to be walked on by the player
+        /// </summary>
+        /// <param name="x">X-coordinate</param>
+        /// <param name="y">Y-coordinate</param>
+        /// <returns>If the given coordinate does not have a wall on it</returns>
         public bool IsPositionWalkable(int x, int y)
         {
             if (x < 0 || y < 0 || x >= Cols || y >= Rows)

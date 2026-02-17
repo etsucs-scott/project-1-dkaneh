@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AdventureGame.Core
 {
+    /// <summary>
+    /// Abstract class for potions and weapons
+    /// </summary>
     internal abstract class Item
     {
         public int X { get; set; }
