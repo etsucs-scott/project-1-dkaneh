@@ -1,43 +1,19 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/2QC0Bpz-)
-# CSCI 1260 — Project
+# CSCI 1260 — Adventure Game Project
+## By: Kane Hicks
 
-## Project Instructions
-All project requirements, grading criteria, and submission details are provided on **D2L**.  
-Refer to D2L as the *authoritative source* for this assignment.
+## Game Instructions
 
-This repository is intentionally minimal. You are responsible for:
-- Creating the solution and projects
-- Designing the class structure
-- Implementing the required functionality
+- When opening, pressing any key will start a new game
+- Use WASD or arrows to walk around the maze
+  - To win, you must reach the exit, or the `E` tile.
+ 
+- Monsters `M` might block your path to the exit, where walking on the same tile as them will intitiate a fight.
+  - If your health reaches 0, you lose!!!
+- Weapons `W` may be picked up to increase your damage when attacking monster
+- Potions `P` may be gathered to increase your current health by 20
 
 ---
 
-## Getting Started (CLI)
+## [UML Diagram](https://i.ibb.co/S4j2xmRz/image-2026-02-16-235310801.png)
 
-You may use **Visual Studio**, **VS Code**, or the **terminal**.
-
-### Create a solution
-```bash
-dotnet new sln -n ProjectName
-```
-
-### Create a project (example: console app)
-```bash
-dotnet new console -n ProjectName.App
-```
-
-### Add the project to the solution
-```bash
-dotnet sln add ProjectName.App
-```
-
-### Build and run
-```bash
-dotnet build
-dotnet run --project ProjectName.App
-```
-
-## Notes
-- Commit early and commit often.
-- Your repository history is part of your submission.
-- Update this README with build/run instructions specific to your project.
+This UML diagram covers all of the classes and their properties, all of which aggregate to the main central game class.
